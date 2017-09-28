@@ -19,7 +19,7 @@
 > > > Tile  
 > > > Resources  
 > > ### Menu [Michael]
-> > > Main  
+> > > ~~Main~~  
 > > > Play  
 > > > Settings  
 > > > Load  

@@ -1,4 +1,4 @@
-# Settlers-of-Nahtan
+# The Col'nies of Nahtan
 > ## Projects:
 > > ### Gameplay
 > > > #### Player [Name]

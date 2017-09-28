@@ -4,9 +4,7 @@ import java.awt.Graphics;
 import java.util.ArrayList;
 
 public class MenuState
-{
-	private final int BUTTON_PADDING = 25;
-	
+{	
 	private int menuState;
 	
 	private ArrayList<Menu>menus;
@@ -26,14 +24,14 @@ public class MenuState
 	
 	private void loadMainMenu()
 	{
-		int buttonHeight = 50;
-		int buttonWidth = 200;
+		int buttonHeight = 115;
+		int buttonWidth = 115;
 		
 		Menu mainMenu = new Menu(new MenuTitle("Nahtan", 100, 100));	
 		
-		Button startButton = new Button("Play", 0, 0, buttonWidth, buttonHeight);
-		Button settingsButton = new Button("Settings", 0, 0, buttonWidth, buttonHeight);
-		Button quitButton = new Button("Quit", 0, 0, buttonWidth, buttonHeight);
+		Button startButton = new HexagonalButton("Play", 200, 500, buttonWidth, buttonHeight, 1);
+		Button settingsButton = new HexagonalButton("Settings", 400, 500, buttonWidth, buttonHeight, 2);
+		Button quitButton = new HexagonalButton("Quit", 600, 500, buttonWidth, buttonHeight, -1);
 		
 		mainMenu.addButton(startButton);
 		mainMenu.addButton(settingsButton);
@@ -70,6 +68,25 @@ public class MenuState
 	public void setMenuState(int menuState)
 	{
 		this.menuState = menuState;
+	}
+	
+	public int getMenuState()
+	{
+		return menuState;
+	}
+	
+	public void checkMouseClick(int x, int y)
+	{
+		if(menus.get(menuState).checkMouseClick(x, y))
+		{
+			menuState = menus.get(menuState).getButtonPressed(x, y);
+		}
+		System.out.println("Menu State: " + menuState);
+	}
+	
+	public void update()
+	{
+		menus.get(menuState).update();
 	}
 	
 	public void render(Graphics g)

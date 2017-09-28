@@ -21,6 +21,37 @@ public class Menu
 		buttons.add(button);
 	}
 	
+	public boolean checkMouseClick(int x, int y)
+	{
+		for(Button button : buttons)
+		{
+			if(button.contains(x, y))
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+	public int getButtonPressed(int x, int y)
+	{
+		for(Button button : buttons)
+		{
+			if(button.contains(x, y))
+			{
+				return button.getMenuState();
+			}
+		}
+		return -1;
+	}
+	
+	public void update() 
+	{
+		for(Button button : buttons)
+		{
+			button.update();
+		}
+	}
+	
 	public void render(Graphics g)
 	{
 		menuTitle.render(g);

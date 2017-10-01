@@ -17,9 +17,9 @@ public class Hand
 	
 	public Hand()
 	{
-		clay = 0;
+		brick = 0;
 		ore= 0;
-		lumber = 0;
+		wood = 0;
 		wheat = 0;
 		sheep = 0;
 	}

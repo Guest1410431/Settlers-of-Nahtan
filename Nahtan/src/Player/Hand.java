@@ -9,9 +9,9 @@ public class Hand
 	private ArrayList<ResourceCard> hand;
 	
 	// to keep track of what's in our hand so we don't have to traverse list
-	private int clay;
+	private int brick;
 	private int ore;
-	private int lumber;
+	private int wood;
 	private int wheat;
 	private int sheep;
 	

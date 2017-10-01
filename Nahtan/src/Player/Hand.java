@@ -26,17 +26,17 @@ public class Hand
 	
 	public int howMany(String type)
 	{ // returns the number of a type of card, must type as you would and enumerated type
-		if (type == "CLAY" || type == "clay")
+		if (type == "BRICK" || type == "brick")
 		{
-			return clay;
+			return brick;
 		}
 		if (type == "ORE" || type == "ore")
 		{
 			return ore;
 		}
-		if (type == "LUMBER" || type == "lumber")
+		if (type == "WOOD" || type == "wood")
 		{
-			return lumber;
+			return wood;
 		}
 		if (type == "WHEAT" || type == "wheat")
 		{

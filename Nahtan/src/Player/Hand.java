@@ -25,7 +25,7 @@ public class Hand
 	}
 	
 	public int howMany(String type)
-	{ // must type as you would and enumerated type
+	{ // returns the number of a type of card, must type as you would and enumerated type
 		if (type == "CLAY" || type == "clay")
 		{
 			return clay;

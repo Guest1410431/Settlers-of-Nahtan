@@ -1,4 +1,4 @@
-package Hand;
+package Player;
 
 public class Hand
 {

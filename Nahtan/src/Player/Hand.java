@@ -9,6 +9,7 @@ public class Hand
 	private ArrayList<ResourceCard> hand;
 	
 	// to keep track of what's in our hand so we don't have to traverse list
+	// TODO: CHECK OUT HASHMAPs <3
 	private int brick;
 	private int ore;
 	private int wood;

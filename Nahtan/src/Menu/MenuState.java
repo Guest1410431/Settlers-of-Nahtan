@@ -2,27 +2,24 @@ package Menu;
 
 import java.awt.Graphics;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import Utilities.Matrix;
-import Utilities.Node;
-import Utilities.Point;
 
 public class MenuState
 {
 	private int menuState;
 
-	private HashMap<Integer, Menu> menus;
+	private ArrayList<Menu> menus;
 	private Matrix<HexagonalButton> hexMatrix;
 
 	public MenuState(int windowHeight, int windowWidth)
 	{
-		menuState = 1;
+		menuState = 0;
 
-		menus = new HashMap<Integer, Menu>();
+		menus = new ArrayList<Menu>();
 		hexMatrix = new Matrix<HexagonalButton>();
 
-		makeHexGrid(windowWidth, windowHeight-100, 12, 100, 0);
+		makeHexGrid(windowWidth, windowHeight - 100, 12, 100, 0);
 		loadMainMenu();
 		loadGameMenu();
 		loadSettingMenu();
@@ -51,47 +48,83 @@ public class MenuState
 			}
 		}
 	}
-
+	// Main Menu: 0
 	private void loadMainMenu()
 	{
 		Menu mainMenu = new Menu(new MenuTitle("Nahtan", 100, 100));
-		
-		ArrayList<HexagonalButton>buttons = getButtonLayout();
-			
-		buttons.get(0).setButtonName("Play Button");
-		buttons.get(0).setMenuState(2);
-		buttons.get(8).setButtonName("Settings Button");
-		buttons.get(8).setMenuState(3);
-		buttons.get(7).setButtonName("Quit Button");
-		buttons.get(7).setMenuState(-1);
-		
-		for(HexagonalButton button : buttons)
+
+		ArrayList<HexagonalButton> buttons = getButtonLayout();
+
+		for (HexagonalButton button : buttons)
 		{
-			mainMenu.addButton(button);
-		}		
-		menus.put(1, mainMenu);
+			mainMenu.addButton(button.copyOf());
+		}
+		mainMenu.getButtonsAt(0).setButtonName("Play Button");
+		mainMenu.getButtonsAt(0).setMenuState(1);
+		mainMenu.getButtonsAt(8).setButtonName("Settings Button");
+		mainMenu.getButtonsAt(8).setMenuState(2);
+		mainMenu.getButtonsAt(7).setButtonName("Quit Button");
+		mainMenu.getButtonsAt(7).setMenuState(-1);
+
+		menus.add(mainMenu);
 	}
-	
+	// Play Menu: 1
 	private void loadGameMenu()
 	{
+		Menu playMenu = new Menu(new MenuTitle("Play Menu", 100, 100));
 
+		ArrayList<HexagonalButton> buttons = getButtonLayout();
+
+		for (HexagonalButton button : buttons)
+		{
+			playMenu.addButton(button.copyOf());
+		}
+		playMenu.getButtonsAt(0).setButtonName("Play Button");
+		playMenu.getButtonsAt(0).setMenuState(1);
+		playMenu.getButtonsAt(8).setButtonName("Back Button");
+		playMenu.getButtonsAt(8).setMenuState(0);
+		playMenu.getButtonsAt(7).setButtonName("Quit Button");
+		playMenu.getButtonsAt(7).setMenuState(-1);
+
+		menus.add(playMenu);
 	}
-
+	// Settings Menu: 2
 	private void loadSettingMenu()
 	{
+		Menu settingsMenu = new Menu(new MenuTitle("Settings Menu", 100, 100));
 
+		ArrayList<HexagonalButton> buttons = getButtonLayout();
+
+		for (HexagonalButton button : buttons)
+		{
+			settingsMenu.addButton(button.copyOf());
+		}
+		settingsMenu.getButtonsAt(0).setButtonName("Options");
+		settingsMenu.getButtonsAt(0).setMenuState(2);
+		settingsMenu.getButtonsAt(8).setButtonName("Option");
+		settingsMenu.getButtonsAt(8).setMenuState(2);
+		settingsMenu.getButtonsAt(7).setButtonName("Another Option");
+		settingsMenu.getButtonsAt(7).setMenuState(2);
+		settingsMenu.getButtonsAt(1).setButtonName("Options 1");
+		settingsMenu.getButtonsAt(1).setMenuState(2);
+		settingsMenu.getButtonsAt(2).setButtonName("Option 2");
+		settingsMenu.getButtonsAt(2).setMenuState(2);
+		settingsMenu.getButtonsAt(3).setButtonName("Back");
+		settingsMenu.getButtonsAt(3).setMenuState(0);
+
+		menus.add(settingsMenu);
 	}
-
+	// Player Menu: 3
 	private void loadPlayerMenu()
 	{
 
 	}
-
+	// Load Menu: 4
 	private void loadLoadMenu()
 	{
 
 	}
-
+	// Error Message: 5
 	private void loadNullMenu()
 	{
 
@@ -118,8 +151,8 @@ public class MenuState
 
 	private ArrayList<HexagonalButton> getButtonLayout()
 	{
-		ArrayList<HexagonalButton>buttons = new ArrayList<HexagonalButton>();
-		
+		ArrayList<HexagonalButton> buttons = new ArrayList<HexagonalButton>();
+
 		buttons.add(hexMatrix.get(2, 0));
 		buttons.add(hexMatrix.get(3, 1));
 		buttons.add(hexMatrix.get(2, 1));
@@ -130,7 +163,7 @@ public class MenuState
 		buttons.add(hexMatrix.get(3, 5));
 		buttons.add(hexMatrix.get(1, 4));
 		buttons.add(hexMatrix.get(0, 3));
-		
+
 		return buttons;
 	}
 

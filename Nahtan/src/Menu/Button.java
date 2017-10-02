@@ -30,10 +30,20 @@ public abstract class Button
 		this.yPos = yPos;
 		this.width = width;
 		this.height = height;
+	
 	}
+	public void setButtonName(String buttonName)
+	{
+		this.buttonName = buttonName;
+	}
+	public void setMenuState(int menuRouteIndex)
+	{
+		this.menuState = menuRouteIndex;
+	}	
+	
 	public abstract int getMenuState();
 	public abstract boolean contains(int mouseX, int mouseY);
 	
 	public abstract void update();
-	public abstract void render(Graphics g);	
+	public abstract void render(Graphics g);
 }

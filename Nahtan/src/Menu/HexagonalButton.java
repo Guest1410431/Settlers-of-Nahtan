@@ -90,4 +90,8 @@ public class HexagonalButton extends Button
 		g.drawPolygon(hexagon);
 		g.drawString((buttonName == null) ? "" : buttonName + " | " + menuState, xPos, yPos);
 	}
+	public Button copyOf()
+	{
+		return new HexagonalButton(xPos, yPos, radius);
+	}
 }

@@ -43,7 +43,11 @@ public class Menu
 		}
 		return -1;
 	}
-	
+
+	public Button getButtonsAt(int i)
+	{
+		return buttons.get(i);
+	}
 	public void update() 
 	{
 		for(Button button : buttons)

@@ -13,6 +13,13 @@ public abstract class Button
 
 	private String buttonName;
 	
+	public Button(int xPos, int yPos, int width)
+	{
+		this.xPos = xPos;
+		this.yPos = yPos;
+		this.width = width;
+	}
+	
 	public Button(String buttonName, int xPos, int yPos, int width, int height, int menuState)
 	{
 		this.buttonName = buttonName;

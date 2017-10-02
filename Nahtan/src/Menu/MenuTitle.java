@@ -34,6 +34,7 @@ public class MenuTitle
 	
 	public void render(Graphics g)
 	{
+		g.drawString(menuTitle, xPos, yPos);
 		for(int i=0; i<letters.size(); i++)
 		{
 			g.drawImage(letters.get(i), xPos + (i*(LETTER_WIDTH + LETTER_SPACING)), yPos, LETTER_WIDTH, LETTER_HEIGHT, null);

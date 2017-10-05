@@ -25,8 +25,8 @@
 > > > Load  
 > > > In Game Menus  
 > > > > Pop-ups  
-> > > > Alerts 
-> > > > GUI
+> > > > Alerts  
+> > > > GUI  
 > > > > Escape Menu (Gameplay Settings and General Options)  
 
 

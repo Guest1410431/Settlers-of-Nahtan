@@ -15,7 +15,7 @@ import Utilities.Assets;
 public class HexagonalButton extends Button
 {
 	private final int LETTER_SPACING = 1;
-	private final int LETTER_SIZE = 1;
+	private final float LETTER_SIZE = 3.0f;
 	// xPos and yPos represent the coordinates of the center of the button
 	private int xPos;
 	private int yPos;
@@ -130,8 +130,8 @@ public class HexagonalButton extends Button
 			{
 				LetterImage fontLetter = letters.get(i);
 
-				g.drawImage(fontLetter.getImage(), xPos + spacing, yPos, fontLetter.getWidth() * LETTER_SIZE,
-						fontLetter.getHeight() * LETTER_SIZE, null);
+				g.drawImage(fontLetter.getImage(), xPos - (radius/2) + spacing, yPos, (int)(fontLetter.getWidth() * LETTER_SIZE),
+						(int)(fontLetter.getHeight() * LETTER_SIZE), null);
 
 				spacing += (fontLetter.getWidth() * LETTER_SIZE) + LETTER_SPACING;
 			}

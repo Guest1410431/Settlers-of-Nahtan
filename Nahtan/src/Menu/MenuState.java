@@ -51,7 +51,7 @@ public class MenuState
 	// Main Menu: 0
 	private void loadMainMenu()
 	{
-		Menu mainMenu = new Menu(new MenuTitle("Nahtan", 100, 100));
+		Menu mainMenu = new Menu(new MenuTitle("Col'nies of Nahtan", 100, 100));
 
 		ArrayList<HexagonalButton> buttons = getButtonLayout();
 

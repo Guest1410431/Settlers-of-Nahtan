@@ -58,11 +58,10 @@ public class Menu
 	
 	public void render(Graphics g)
 	{
-		menuTitle.render(g);
-		
 		for(Button button : buttons)
 		{
 			button.render(g);
 		}
+		menuTitle.render(g);
 	}
 }

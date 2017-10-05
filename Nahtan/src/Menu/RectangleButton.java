@@ -17,8 +17,6 @@ public class RectangleButton extends Button
 
 	public RectangleButton(String buttonName, int xPos, int yPos, int width, int height, int menuState)
 	{
-		super(buttonName, xPos, yPos, width, height, menuState);
-
 		this.buttonName = buttonName;
 
 		this.menuState = menuState;
@@ -43,7 +41,16 @@ public class RectangleButton extends Button
 	}
 	public void render(Graphics g)
 	{
+		g.drawString("" + buttonName, 100, 100);
 		g.setColor(Color.BLACK);
 		g.drawRect(xPos, yPos, width, height);
+	}
+	public void setButtonName(String buttonName)
+	{
+		this.buttonName = buttonName;
+	}
+	public void setMenuState(int menuRouteIndex)
+	{
+		this.menuState = menuRouteIndex;
 	}
 }

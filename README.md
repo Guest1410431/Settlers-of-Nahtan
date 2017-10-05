@@ -20,7 +20,7 @@
 > > > Resources  
 > > ### Menu [Michael]
 > > > ~~Main~~  
-> > > ~~Play~~ 
+> > > ~~Play~~  
 > > > ~~Settings~~  
 > > > Load  
 

@@ -20,8 +20,8 @@
 > > > Resources  
 > > ### Menu [Michael]
 > > > ~~Main~~  
-> > > Play  
-> > > Settings  
+> > > ~~Play~~ 
+> > > ~~Settings~~  
 > > > Load  
 
 The title font is from the So so Font family: [So so Shady](http://www.1001fonts.com/so-font.html)  

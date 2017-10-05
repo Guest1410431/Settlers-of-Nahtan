@@ -2,5 +2,5 @@ package Board;
 
 public enum ResourceType
 {
-	CLAY, ORE, LUMBER, WHEAT, SHEEP;
+	CLAY, ORE, WOOD, WHEAT, SHEEP;
 }

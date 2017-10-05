@@ -34,7 +34,15 @@ public class SoSo_Letter extends LetterImage
 		}
 		else
 		{
-			System.out.println("Error: Invalid Character: " + letter);
+			switch(letter)
+			{
+			case(39):
+				letterImage = letterImages.get(52);
+				break;
+			default:
+				System.out.println("Error: Invalid Character: " + letter + " | " + (int)(letter));
+				letterImage = new BufferedImage(SPACE_SIZE, 1, BufferedImage.TYPE_INT_ARGB);
+			}
 		}
 		width = letterImage.getWidth();
 		height = letterImage.getHeight();
